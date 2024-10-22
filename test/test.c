@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 	len = ftell(f);
 	assert(len > 0);
 	fseek(f, 0, SEEK_SET);
-	test_data = malloc(len);
+	test_data = (char*)(malloc(len));
 	assert(test_data);
 	fread(test_data, 1, len, f);
 	fclose(f);
@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 	for (i = 0; i < len; i++)
 		if (test_data[i] == '\n')
 			sat_cnt++;
-	sats = malloc(sizeof(struct SatCat) * sat_cnt);
+	sats = (struct SatCat*)(malloc(sizeof(struct SatCat) * sat_cnt));
 	assert(sats);
 
 	/* Parse satellites */

@@ -1,4 +1,4 @@
-# libSATCAT
+# libSATCAT - Morello Cheri Build
 
 C Parser for the SATCAT Format.
 
@@ -33,7 +33,23 @@ Launch Site: Tyuratam Missile and Space Center, Kazakhstan
 
 ### Morello Build Options
 
-Placeholder.
+Build static test program with HybridABI:
+```make hybrid-static```
+
+Build static test program with PurecapABI:
+```make purecap-static```
+
+Build static test program with BenchmarkABI:
+```make benchmark-static```
+
+Build dynamically linked libraries test program with HybridABI:
+```make hybrid-dynamic```
+
+Build dynamically linked libraries test program with PurecapABI:
+```make purecap-dynamic```
+
+Build libary-base compartmentalisation test program with PurecapABI:
+```make purecap-compartmentalised```
 
 ## Usage
 
@@ -58,9 +74,23 @@ Provides description strings for SATCAT Operational Status, Source, and Launch S
 
 These files can be regenerated using `util/gen_code.py` if the SATCAT Operational Status, Source, and Launch Site Codes are expanded.
 
+### Morello Usage Options
+
+Run purecap dynamic linked libraries build:
+```LD_LIBRARY_PATH=../lib ./libsatcat-test-purecap-dynamic-linked```
+
+Debug purecap dynamic linked libraries build:
+```LD_LIBRARY_PATH=../lib gdb ./libsatcat-test-purecap-dynamic-linked```
+
+Run purecap Compartmentalisation build:
+```LD_C18N_LIBRARY_PATH=../lib ./libsatcat-test-purecap-compartmentalised```
+
+Debug purecap Compartmentalisation build:
+```LD_C18N_LIBRARY_PATH=../lib gdb ./libsatcat-test-purecap-compartmentalised```
+
 ## License
 ```
-Copyright (c) 2022-2024 Wojciech Graj
+Copyright (c) 2022-2024 Wojciech Graj, Harri Lee Renney
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
