@@ -31,6 +31,10 @@ Source: Commonwealth of Independent States (former USSR)
 Launch Site: Tyuratam Missile and Space Center, Kazakhstan
 ```
 
+### Morello Build Options
+
+Placeholder.
+
 ## Usage
 
 By default, strings within `struct SatCat` are **NOT** NULL-terminated, and are right-padded with spaces. To enable NULL-terminated strings, define `SC_CSTRING`.
