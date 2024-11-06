@@ -54,11 +54,11 @@ int main(int argc, char **argv)
 	free(test_data);
 
 	/* Print summary */
-	printf("Parsed and Validated %u satellites in %fs.\n", sat_cnt, (clk_end - clk_start) / (float)CLOCKS_PER_SEC);
+	printf("\e[32mParsed and Validated %u satellites in %fs.\n", sat_cnt, (clk_end - clk_start) / (float)CLOCKS_PER_SEC);
 	printf("Found %u valid satellites and %u invalid satellites.\n\n", i_sat, sat_cnt - i_sat);
 
 	/* Demonstrate satcat_code.h */
-	puts("First satellite:");
+	puts("\e[37mFirst satellite:");
 #ifdef SC_CSTRING
 	printf("Name: %s\n", sats[0].name);
 #else
@@ -67,7 +67,7 @@ int main(int argc, char **argv)
 	printf("Catalog Number: %u\n", sats[0].catnum);
 	printf("Status: %s\n", sc_status_str(sats[0].opstat));
 	printf("Source: %s\n", sc_source_str(SC_STR5_TO_CODE(sats[0].source)));
-	printf("Launch Site: %s\n", sc_launch_site_str(SC_STR5_TO_CODE(sats[0].launch_site)));
+	printf("Launch Site: %s\n\n\e[32m", sc_launch_site_str(SC_STR5_TO_CODE(sats[0].launch_site)));
 
 	return 0;
 
