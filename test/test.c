@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 	clock_t clk_start, clk_end;
 
 	/* Read test data */
-	f = fopen("test_data.txt", "rb");
+	f = fopen(argv[1], "rb");
 	assert(f);
 	fseek(f, 0, SEEK_END);
 	len = ftell(f);
@@ -67,7 +67,7 @@ int main(int argc, char **argv)
 	printf("Catalog Number: %u\n", sats[0].catnum);
 	printf("Status: %s\n", sc_status_str(sats[0].opstat));
 	printf("Source: %s\n", sc_source_str(SC_STR5_TO_CODE(sats[0].source)));
-	printf("Launch Site: %s\n\n\e[32m", sc_launch_site_str(SC_STR5_TO_CODE(sats[0].launch_site)));
+	printf("Launch Site: %s\n\n\e[37m", sc_launch_site_str(SC_STR5_TO_CODE(sats[0].launch_site)));
 
 	return 0;
 

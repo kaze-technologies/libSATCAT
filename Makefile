@@ -96,4 +96,4 @@ benchmark-compartmentalised:
 	c++ -mabi=purecap-benchmark -c -fPIC src/satcat_code.c -O3 -o lib/satcat_code_benchmark_compartment.o
 	c++ -mabi=purecap-benchmark -shared -O3 -o lib/libsatcat_code_benchmark_compartment.so lib/satcat_code_benchmark_compartment.o
 	
-	c++ test/test.c -mabi=purecap-benchmark -Wl,-dynamic-linker=/libexec/ld-elf-c18n.so.1 -lm -ansi -Isrc -o bin/libsatcat-test-benchmark-compartmentalised -lsatcat_benchmark_compartment -lsatcat_code_benchmark_compartment -Llib
+	c++ test/test.c -mabi=purecap-benchmark -Wl,-dynamic-linker=/libexec/ld-elf64cb-c18n.so.1 -lm -ansi -Isrc -o bin/libsatcat-test-benchmark-compartmentalised -lsatcat_benchmark_compartment -lsatcat_code_benchmark_compartment -Llib
